@@ -1,0 +1,35 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: directusroot
+      MYSQL_USER: directus
+      MYSQL_PASSWORD: directus
+      MYSQL_DATABASE: directus
+    networks:
+      - directus
+
+  directus:
+    image: directus:test
+    environment:
+      DIRECTUS_DB_HOST: mysql
+      DIRECTUS_DB_PORT: '3306'
+      DIRECTUS_DB_USER: directus
+      DIRECTUS_DB_PASSWORD: directus
+      DIRECTUS_DB_SCHEMA: directus
+      DIRECTUS_ADMIN_EMAIL: admin@example.com
+      DIRECTUS_ADMIN_PASSWORD: secret1234
+      DIRECTUS_SITE_NAME: localhost
+    networks:
+      - directus
+    ports:
+      - 8080:8080
+    volumes:
+      - ./volume/api:/var/www/html/api
+      - ./volume/storage:/var/www/html/storage
+    restart: always
+
+networks:
+  directus:
+    driver: bridge
