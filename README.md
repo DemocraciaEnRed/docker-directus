@@ -1,6 +1,6 @@
 # Directus
 
-Este container esta basado en un repositorio archivado llamado [directus-docker](https://github.com/directus/directus-docker) que tambien esta disponible en Docker Hub como [getdirectus/directus](https://hub.docker.com/r/getdirectus/directus). La version utilizada es Directus 6.9.4.
+Este container esta basado en un repositorio archivado llamado [directus-docker](https://github.com/directus/directus-docker) que tambien esta disponible en Docker Hub como [getdirectus/directus](https://hub.docker.com/r/getdirectus/directus). La version utilizada es Directus 6.4.9.
 
 ## Variables de Entorno
 
